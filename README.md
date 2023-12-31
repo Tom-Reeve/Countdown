@@ -7,3 +7,4 @@ A (hopefully) satisfying countdown to some recurring events
 - DST Issues (?)
 - Change Title
 - Add Time / Date to Display
+- Add Day / Week of Year to Display
