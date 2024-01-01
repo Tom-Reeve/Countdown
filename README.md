@@ -11,3 +11,4 @@ A (hopefully) satisfying countdown to some recurring events
 - Custom Countdown Dates
 - Table Layout
 - Split Into HTML / JS / CSS
+- Toggle Day / Second Countdown (Or Both)
