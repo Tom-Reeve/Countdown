@@ -3,7 +3,7 @@ A (hopefully) satisfying countdown to some recurring events
 
 # To Do List
 - Changeable "Birthday" Date
-- Extra Information On Hover
+- Extra Information On Hover (Countdown Dates etc)
 - DST Issues (?)
 - Change Title
 - Add Time / Date to Display
