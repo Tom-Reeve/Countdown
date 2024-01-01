@@ -10,3 +10,4 @@ A (hopefully) satisfying countdown to some recurring events
 - Add Day / Week of Year to Display
 - Custom Countdown Dates
 - Table Layout
+- Split Into HTML / JS / CSS
