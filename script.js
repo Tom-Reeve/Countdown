@@ -154,6 +154,11 @@ function SetCountdown() {
         if (difference < 0) {
             events[i] = new Date(parseInt(custom_year) + (date.getFullYear() - custom_year), custom_month - 1, custom_day, custom_hour, custom_minute, custom_second);
             difference = events[i] - date;
+
+            if (difference < 0) {
+                events[i] = new Date(parseInt(custom_year) + 1, custom_month - 1, custom_day, custom_hour, custom_minute, custom_second);
+                difference = events[i] - date;
+            }
         }
                 
         let seconds_remaining = Math.ceil(difference / 1000);
@@ -222,21 +227,3 @@ tooltip[8].addEventListener("click", function(e) {
     custom_text = split_custom[2];
     event_names[8] = "Next " + custom_text;
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    
