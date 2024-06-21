@@ -157,6 +157,7 @@ function SetCountdown() {
 
             if (difference < 0) {
                 events[i] = new Date(parseInt(custom_year) + 1, custom_month - 1, custom_day, custom_hour, custom_minute, custom_second);
+                custom_year++;
                 difference = events[i] - date;
             }
         }
