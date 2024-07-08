@@ -43,8 +43,13 @@
     height: 40%;
     font-size: 2.5em;
 }
+#page-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 #countdown-container {
-    width: 100%;
+    width: 95%;
 }
 .countdown {
     width: 100%;
@@ -78,18 +83,14 @@
     position: absolute;
     background-color: orange;
 }   
+.epoch-container {
+    width: 100%;
 
+    text-align: center;
+    font-size: 1.2em;
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+    margin-bottom: 12px;
+}
+.highlight {
+    color: red;
+}
