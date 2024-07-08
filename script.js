@@ -15,6 +15,12 @@ let days = document.getElementsByClassName("days");
 let percent_span = document.getElementsByClassName("percent");
 let progress_bar = document.getElementsByClassName("progress-bar");
 
+let UNIX_epoch_span = document.getElementById("epoch-secs");
+
+let UNIX_milestone_span = document.getElementById("epoch-milestone");
+let UNIX_date_span = document.getElementById("epoch-date");
+let UNIX_countdown_span = document.getElementById("epoch-countdown");
+
 for (let i = 0 ; i < seconds_div.length ; i++) {
     days_div[i].style.display = "none";
 
@@ -50,6 +56,7 @@ function AddCommas(number) {
 function Timing() {
     SetTimeAndDate();
     SetCountdown();
+    UNIXcountdown();
 }
 let timing_interval = setInterval(Timing, 1);
 
@@ -84,6 +91,21 @@ function SetTimeAndDate() {
         year_span[i].innerHTML = date.getFullYear();
     }
 };
+
+function UNIXcountdown() {
+    let UNIX_secs = Math.floor(Date.now() / 1000);
+    UNIX_epoch_span.innerHTML = AddCommas(UNIX_secs);
+
+    let UNIX_milestone = Math.ceil(UNIX_secs / 100000000) * 100000000;
+    UNIX_milestone_span.innerHTML = AddCommas(UNIX_milestone);
+
+    let milestone_date = new Date(UNIX_milestone * 1000);
+    let options = {weekday: "long", year: "numeric", month: "long", day: "numeric", hour: "2-digit", minute: "2-digit", second: "2-digit"};
+    UNIX_date_span.innerHTML = milestone_date.toLocaleDateString("en-GB", options);
+
+    let milestone_countdown = ((UNIX_milestone - Math.floor(Date.now() / 1000)) / 60 / 60 / 24).toFixed(5);
+    UNIX_countdown_span.innerHTML = AddCommas(milestone_countdown);
+}
 
 let events = [];
 let d = new Date();
